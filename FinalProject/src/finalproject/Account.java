@@ -10,6 +10,7 @@ package finalproject;
  * @author Aron
  */
 public class Account implements iAccount {
+
     private String fullName;
     private double checkingBalance;
     private double savingsBalance;
@@ -50,25 +51,53 @@ public class Account implements iAccount {
     public int getPin() {
         return pin;
     }
+    
+    /**
+     * @param fullName the fullName to set
+     */
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    /**
+     * @param checkingBalance the checkingBalance to set
+     */
+    public void setCheckingBalance(double checkingBalance) {
+        this.checkingBalance = checkingBalance;
+    }
+
+    /**
+     * @param savingsBalance the savingsBalance to set
+     */
+    public void setSavingsBalance(double savingsBalance) {
+        this.savingsBalance = savingsBalance;
+    }
+
+    /**
+     * @param pin the pin to set
+     */
+    public void setPin(int pin) {
+        this.pin = pin;
+    }
 
     @Override
     public void depositChecking(double amount) {
-        checkingBalance = checkingBalance + amount;
+        setCheckingBalance(getCheckingBalance() + amount);
     }
 
     @Override
     public void withdrawlChecking(double amount) {
-        checkingBalance = checkingBalance - amount;
+        setCheckingBalance(getCheckingBalance() - amount);
     }
 
     @Override
     public void depositSavings(double amount) {
-        savingsBalance = savingsBalance + amount;
+        setSavingsBalance(getSavingsBalance() + amount);
     }
 
     @Override
     public void withdrawlSavings(double amount) {
-        savingsBalance = savingsBalance - amount;
+        setSavingsBalance(getSavingsBalance() - amount);
     }
     
     
