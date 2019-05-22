@@ -40,9 +40,9 @@ public class AccountStorage {
     
     private Account search(String name, int low, int high) {
         if (!sorted) {
-            System.out.println("Sorting...");
+            //System.out.println("Sorting...");
             sort();
-            System.out.println("sorted");
+            //System.out.println("sorted");
         }    
         // binary search
         // Base Case

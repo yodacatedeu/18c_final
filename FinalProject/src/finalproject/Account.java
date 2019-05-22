@@ -17,11 +17,11 @@ public class Account implements iAccount {
     private int pin;
     
     // constructor
-    Account(String fN, double cB, double sB, int p) {
-        fullName = fN;
-        checkingBalance = cB;
-        savingsBalance = sB;
-        pin = p;
+    Account(String fullName, double checkingBalance, double savingsBalance, int pin) {
+        this.fullName = fullName;
+        this.checkingBalance = checkingBalance;
+        this.savingsBalance = savingsBalance;
+        this.pin = pin;
     }
 
     /**
@@ -48,35 +48,35 @@ public class Account implements iAccount {
     /**
      * @return the pin
      */
-    public int getPin() {
+    protected int getPin() {
         return pin;
     }
     
     /**
      * @param fullName the fullName to set
      */
-    public void setFullName(String fullName) {
+    private void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
     /**
      * @param checkingBalance the checkingBalance to set
      */
-    public void setCheckingBalance(double checkingBalance) {
+    private void setCheckingBalance(double checkingBalance) {
         this.checkingBalance = checkingBalance;
     }
 
     /**
      * @param savingsBalance the savingsBalance to set
      */
-    public void setSavingsBalance(double savingsBalance) {
+    private void setSavingsBalance(double savingsBalance) {
         this.savingsBalance = savingsBalance;
     }
 
     /**
      * @param pin the pin to set
      */
-    public void setPin(int pin) {
+    private void setPin(int pin) {
         this.pin = pin;
     }
 
