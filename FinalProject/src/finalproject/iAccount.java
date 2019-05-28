@@ -5,13 +5,12 @@
  */
 package finalproject;
 
-/**
- *
- * @author Aron
- */
+import java.math.BigDecimal;
+
+
 public interface iAccount {
-    void depositChecking (double amount);
-    void withdrawlChecking (double amount); 
-    void depositSavings (double amount); 
-    void withdrawlSavings (double amount);
+    void depositChecking (BigDecimal amount);
+    void withdrawlChecking (BigDecimal amount); 
+    void depositSavings (BigDecimal amount); 
+    void withdrawlSavings (BigDecimal amount);
 }

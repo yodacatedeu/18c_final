@@ -5,19 +5,17 @@
  */
 package finalproject;
 
-/**
- *
- * @author Aron
- */
-public class Account implements iAccount {
+import java.math.BigDecimal;
 
+
+public class Account implements iAccount{
     private String fullName;
-    private double checkingBalance;
-    private double savingsBalance;
+    private BigDecimal checkingBalance;
+    private BigDecimal savingsBalance;
     private int pin;
     
     // constructor
-    Account(String fullName, double checkingBalance, double savingsBalance, int pin) {
+    Account(String fullName, BigDecimal checkingBalance, BigDecimal savingsBalance, int pin) {
         this.fullName = fullName;
         this.checkingBalance = checkingBalance;
         this.savingsBalance = savingsBalance;
@@ -34,14 +32,14 @@ public class Account implements iAccount {
     /**
      * @return the checkingBalance
      */
-    public double getCheckingBalance() {
+    public BigDecimal getCheckingBalance() {
         return checkingBalance;
     }
 
     /**
      * @return the savingsBalance
      */
-    public double getSavingsBalance() {
+    public BigDecimal getSavingsBalance() {
         return savingsBalance;
     }
 
@@ -62,14 +60,14 @@ public class Account implements iAccount {
     /**
      * @param checkingBalance the checkingBalance to set
      */
-    private void setCheckingBalance(double checkingBalance) {
+    private void setCheckingBalance(BigDecimal checkingBalance) {
         this.checkingBalance = checkingBalance;
     }
 
     /**
      * @param savingsBalance the savingsBalance to set
      */
-    private void setSavingsBalance(double savingsBalance) {
+    private void setSavingsBalance(BigDecimal savingsBalance) {
         this.savingsBalance = savingsBalance;
     }
 
@@ -81,24 +79,23 @@ public class Account implements iAccount {
     }
 
     @Override
-    public void depositChecking(double amount) {
-        setCheckingBalance(getCheckingBalance() + amount);
+    public void depositChecking(BigDecimal amount) {
+        setCheckingBalance(getCheckingBalance().add(amount));
     }
 
     @Override
-    public void withdrawlChecking(double amount) {
-        setCheckingBalance(getCheckingBalance() - amount);
+    public void withdrawlChecking(BigDecimal amount) {
+        setCheckingBalance(getCheckingBalance().subtract(amount));
     }
 
     @Override
-    public void depositSavings(double amount) {
-        setSavingsBalance(getSavingsBalance() + amount);
+    public void depositSavings(BigDecimal amount) {
+        setSavingsBalance(getSavingsBalance().add(amount));
     }
 
     @Override
-    public void withdrawlSavings(double amount) {
-        setSavingsBalance(getSavingsBalance() - amount);
+    public void withdrawlSavings(BigDecimal amount) {
+        setSavingsBalance(getSavingsBalance().subtract(amount));
     }
-    
     
 }
